@@ -77,7 +77,7 @@ tools/
   synth_dataset.py     # synthetic phone-photo dataset generator
 tests/                 # 50 pytest tests
 config/pipeline.toml   # runtime configuration
-docs/                  # diagrams + this documentation + screenshots
+docs/screenshots/       # demo visualisations
 data/                  # generated samples and outputs (git-ignored)
 ```
 
@@ -152,25 +152,16 @@ Expected result: all tests pass.
 
 Full per-file numbers live in `data/outputs/demo/report.md`/`.json`.
 
-## Design documentation
-
-- `statement.md` — problem statement, scope, users, features.
-- `docs/report.md` + `docs/report.pdf` — full report (requirements,
-  architecture, UML, decisions, implementation, results, testing,
-  challenges, learnings, future work).
-- `docs/diagrams/` — architecture, workflow, use-case, class, sequence and
-  ER diagrams.
-
 ## Evaluation rubric mapping
 
-- Problem understanding & requirements → `statement.md`, report §3–5.
-- Design & documentation → report §6–7 (six diagrams).
-- Implementation quality → `scanvision/` package (11 modules), error
+- Problem understanding & requirements → `statement.md`.
+- Design & documentation → this README (architecture, features,
+  project structure).
+- Implementation quality → `scanvision/` package (18 modules), error
   handling, typed exceptions, logging, `tests/`.
 - Innovation & depth → synthetic-photo generator, CER/WER evaluation
   harness, hull-based detection + mask fallback, threaded batch.
 - Git repository & version control → this repository.
-- Project report → `docs/report.pdf`.
 
 ## Acknowledgements
 
