@@ -1,0 +1,27 @@
+# ScanVision pipeline configuration
+# All values can be overridden from the command line.
+
+[output]
+out_dir = "data/outputs"      # where scans/reports are written
+
+[detector]
+max_dim = 1600                # detection runs on a downscaled copy (longer side)
+min_area_ratio = 0.02         # candidate quadrangle must cover >= 2% of the image
+max_aspect = 4.0              # reject implausibly thin quadrangles
+
+[enhancement]
+mode = "bw"                   # "bw" (OCR-optimal), "gray", "otsu"
+deskew = true                 # residual text rotation correction
+
+[ocr]
+lang = "eng"
+psm = 6                       # assume a single uniform block of text
+oem = 3                       # default tesseract engine
+#cmd = "/usr/bin/tesseract"   # set when tesseract is not on PATH
+
+[export]
+pdf = true
+text = true
+
+[batch]
+workers = 4                   # threaded parallel processing

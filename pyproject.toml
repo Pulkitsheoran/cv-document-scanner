@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scanvision"
+version = "1.0.0"
+description = "Smart document scanner and OCR pipeline built with classical computer vision (OpenCV) and Tesseract OCR."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["computer-vision", "opencv", "ocr", "document-scanner", "image-processing"]
+dependencies = [
+    "numpy>=1.26",
+    "opencv-python>=4.10",
+    "pillow>=10.0",
+    "pytesseract>=0.3.13",
+    "fpdf2>=2.7",
+    "matplotlib>=3.8",
+]
+
+[project.scripts]
+scanvision = "scanvision.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["scanvision*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
